@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>List of {{expr_type.name.lower}}s</h1>
+
+    {% if expr_list %}
+    <ol>
+
+      {% for expr in expr_list %}
+      <li>
+          <a href="{{ expr.get_absolute_url }}">{{expr}}</a>
+      </li>
+      {% endfor %}
+
+    </ol>
+    {% else %}
+      <p>There are no {{expr_type.name}}s in the table.</p>
+    {% endif %}
+    {% if user.is_authenticated %}
+    <a href="../new/{{expr_type.id}}/">New {{expr_type.name}}</a>
+    {% endif %}
+{% endblock %}

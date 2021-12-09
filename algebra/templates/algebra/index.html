@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+
+{% block content %}
+<div id="header"><p class="h1">Hello Algebra!<p></p></div>
+  <p>Welcome to <em>Algebra</em>, a very basic Django website developed as a tutorial example on the Mozilla Developer Network.</p>
+
+<h2>Dynamic content</h2>
+
+  <p>Algebra has the following record counts:</p>
+  <ul>
+    <li><strong>Expressions:</strong> {{ num_expr }}</li>
+    {% if user.is_authenticated %}
+    <li><strong>Expressions solved:</strong> {{ num_expr_solved }}</li>
+    {% endif %}
+    <li><strong>Equations:</strong> {{ num_eq }}</li>
+    {% if user.is_authenticated %}
+    <li><strong>Equations solved:</strong> {{ num_eq_solved }}</li>
+    {% endif %}
+  </ul>
+  <p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+{% endblock %}

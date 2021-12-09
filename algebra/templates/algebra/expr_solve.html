@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<h1>Solve an {{expr.expr_type.name}}</h1>
+<h2>{{ expr }}</h2>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form }}
+    </table>
+    <input type="submit" value="Submit" />
+</form>
+{% for message in messages %}
+
+    <div class="alert alert-danger">
+        <a class="close" href="#" data-dismiss="alert">×</a>
+           {{ message }}
+    </div>
+
+{% endfor %}
+
+{% endblock %}
