@@ -1,1 +1,1 @@
-web: gunicorn algebra.wsgi --log-file -
+web: gunicorn djangoproject.wsgi --log-file -
