@@ -1,1 +1,1 @@
-web: gunicorn algebratutor.wsgi --log-file -
+web: gunicorn algebra.wsgi --log-file -
